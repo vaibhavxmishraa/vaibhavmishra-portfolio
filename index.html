@@ -1,103 +1,174 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Vaibhav Mishra | AI & ML Portfolio</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Vaibhav Mishra - Royal Portfolio</title>
+
 <link rel="stylesheet" href="style.css">
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
+
 <body>
+    <canvas id="particles"></canvas>
+    <div class="cursor"></div>
+<div class="cursor-glow"></div>
 
-<div class="particles"></div>
+<div class="page-transition"></div>
+<div id="loader">
+  <div class="loader-box">
 
-<header>
-    <nav>
-        <h2 class="logo">Vaibhav<span>AI</span></h2>
+    <div class="logo">⚜ Vaibhav Mishra's Portfolio</div>
 
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
-</header>
+    <div class="shine"></div>
+    <center>
+    <p class="text">Crafting Royal Experience...</p></center>
 
-<section id="home" class="hero">
-    <div class="hero-content">
-        <h1>Hi, I'm <span>Vaibhav Mishra</span></h1>
-        <h2>AI & Machine Learning Enthusiast</h2>
-        <p>
-            Building intelligent solutions using AI, Machine Learning,
-            Deep Learning and Data Science.
-        </p>
 
-        <a href="#projects" class="btn">View Projects</a>
+    <div class="loader-bar">
+      <span></span>
     </div>
+
+  </div>
+</div>
+<nav>
+  <h2>⚜ Vaibhav Mishra</h2>
+
+  <div>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#testimonials">Testimonials</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<div class="hero">
+
+  <div class="hero-text">
+    <h1 id="typing"></h1>
+    <p>AI/ML Student | Web Developer | Freelancer</p>
+  </div>
+
+  <div class="hero-img">
+    <img src="images/photo.png" alt="Vaibhav Photo">
+  </div>
+
+</div>
+
+<section id="about">
+<h2>About Me</h2>
+<p>
+I am a 2nd-semester B.Tech student specializing in AI & ML. I love Web Development, Python, and building real-world projects.
+</p>
 </section>
 
 <section id="skills">
-    <h2 class="title">Skills</h2>
+<h2>My Skills</h2>
 
-    <div class="cards">
-        <div class="card">
-            <i class="fas fa-brain"></i>
-            <h3>Machine Learning</h3>
-        </div>
+<div class="skills">
 
-        <div class="card">
-            <i class="fas fa-robot"></i>
-            <h3>Artificial Intelligence</h3>
-        </div>
+  <div class="skill">
+    <p>Web Development</p>
+    <div class="bar"><span data-width="90%"></span></div>
+  </div>
 
-        <div class="card">
-            <i class="fas fa-chart-line"></i>
-            <h3>Data Science</h3>
-        </div>
+  <div class="skill">
+    <p>Python</p>
+    <div class="bar"><span data-width="85%"></span></div>
+  </div>
 
-        <div class="card">
-            <i class="fab fa-python"></i>
-            <h3>Python</h3>
-        </div>
-    </div>
+  <div class="skill">
+    <p>C / C++</p>
+    <div class="bar"><span data-width="80%"></span></div>
+  </div>
+
+  <div class="skill">
+    <p>AI & ML</p>
+    <div class="bar"><span data-width="83%"></span></div>
+  </div>
+
+</div>
 </section>
 
 <section id="projects">
-    <h2 class="title">Projects</h2>
+<h2>My Projects</h2>
 
-    <div class="cards">
-        <div class="card">
-            <h3>AI Chatbot</h3>
-            <p>Smart chatbot powered by NLP.</p>
-        </div>
+<div class="project-grid">
 
-        <div class="card">
-            <h3>Face Detection System</h3>
-            <p>Real-time face recognition using OpenCV.</p>
-        </div>
+  <div class="project-card" onclick="openProject('Cafe Management System', 'Python based smart cafe billing + management system.')">
+    ☕ Café Management System
+  </div>
 
-        <div class="card">
-            <h3>Predictive Analytics</h3>
-            <p>Machine learning model for predictions.</p>
-        </div>
+  <div class="project-card" onclick="openProject('Email Validator', 'Python project to validate email formats with logic checks.')">
+    📧 Email Validation Tool
+  </div>
+
+  <div class="project-card" onclick="openProject('Multimedia Website', 'Responsive multimedia website with animations.')">
+    🎬 Multimedia Website
+  </div>
+
+</div>
+</section>
+
+<!-- POPUP MODAL -->
+<div id="projectModal" class="modal hidden">
+  <div class="modal-box">
+    <h2 id="projectTitle"></h2>
+    <p id="projectDesc"></p>
+    <button onclick="closeProject()" class="btn">Close</button>
+  </div>
+</div>
+<section id="testimonials">
+<h2>Royal Testimonials</h2>
+
+<div class="testimonial-grid">
+
+  <div class="testimonial-card" onclick="toggleLetter(this)">
+    <div class="seal">⚜ SEALED LETTER</div>
+    <h3>Industry Feedback</h3>
+    <div class="letter hidden">
+      Vaibhav is a highly dedicated developer with strong fundamentals in Web Development and Python.
     </div>
+  </div>
+
+  <div class="testimonial-card" onclick="toggleLetter(this)">
+    <div class="seal">⚜ SEALED LETTER</div>
+    <h3>Mentor Review</h3>
+    <div class="letter hidden">
+      Shows great interest in AI & ML and continuously improves technical skills with consistency.
+    </div>
+  </div>
+
+</div>
 </section>
 
 <section id="contact">
-    <h2 class="title">Contact Me</h2>
+<h2>Contact</h2>
 
-    <div class="contact-box">
-        <p>Email: Vaibhavmishra983907@gmail.com</p>
-        <p>LinkedIn: https://www.linkedin.com/in/vaibhav-mishra-1543b8390?utm_source=share_via&utm_content=profile&utm_medium=member_android</p>
-        <p>GitHub: https://github.com/vaibhavxmishraa</p>
-    </div>
+<form onsubmit="sendMessage(event)">
+  <input type="text" placeholder="Your Name" required>
+  <input type="email" placeholder="Your Email" required>
+  <textarea rows="5" placeholder="Your Message" required></textarea>
+  <button class="btn" type="submit">Send Message</button>
+</form>
+
 </section>
 
 <footer>
-    <p>© 2026 Vaibhav Mishra | AI & ML Portfolio</p>
+© 2026 Vaibhav Mishra | Royal Portfolio
 </footer>
+<div id="chatbot-toggle">💬</div>
+
+<div id="chatbot">
+  <div class="chat-header">AI Assistant</div>
+
+  <div id="chat-box"></div>
+
+  <div class="chat-input">
+    <input type="text" id="userInput" placeholder="Ask something..." />
+    <button onclick="sendMessage()">Send</button>
+  </div>
+</div>
 
 <script src="script.js"></script>
 </body>
